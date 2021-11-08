@@ -8,5 +8,14 @@
 
 <h1>Hello world (Python demo; {{ env }})</h1>
 
+<p>Available on:</p><ul>
+    {% for host in hosts %}
+        <li>{{ host }}</li>
+    {% endfor %}
+</ul>
+
+{% load static %}
+<img src="{% static 'images/bg.jpg' %}" alt="My image">
+
 </body>
 </html>

@@ -14,16 +14,9 @@ import requests
 from pathlib import Path
 
 
-def is_ec2_linux():
-    """
-        Detect if we are running on an EC2 Linux Instance
-        See http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/identify_ec2_instances.html
-    """
-    if os.path.isfile("/sys/hypervisor/uuid"):
-        with open("/sys/hypervisor/uuid") as f:
-            uuid = f.read()
-            return uuid.startswith("ec2")
-    return False
+ENV = os.environ['ENV']
+ENV_IS_DEV = ENV == 'dev'
+ENV_IS_PROD = ENV == 'prod'
 
 
 def get_token():
@@ -42,9 +35,6 @@ def get_linux_ec2_private_ip():
         Get the private IP Address of the machine if running on an EC2 linux server.
         See https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instancedata-data-retrieval.html
     """
-
-    if not is_ec2_linux():
-        return None
 
     response = None
 
@@ -72,15 +62,18 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.environ['DJANGO_SECRET_KEY']
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = os.environ['ENV'] == 'dev'
+DEBUG = ENV_IS_DEV
 
-ALLOWED_HOSTS = [
-    '127.0.0.1',
-    'grahamghughes-env.eba-kmvffbk8.eu-west-1.elasticbeanstalk.com'
-]
+ALLOWED_HOSTS = []
 
-if private_ip := get_linux_ec2_private_ip():
-    ALLOWED_HOSTS.append(private_ip)
+if ENV_IS_DEV:
+    ALLOWED_HOSTS.append('127.0.0.1')
+
+if ENV_IS_PROD:
+    ALLOWED_HOSTS.append('grahamghughes-env.eba-kmvffbk8.eu-west-1.elasticbeanstalk.com')
+
+    if private_ip := get_linux_ec2_private_ip():
+        ALLOWED_HOSTS.append(private_ip)
 
 # Application definition
 
@@ -167,7 +160,14 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
+STATIC_FOLDER_IMAGES = 'images'
+
 STATIC_URL = '/static/'
+STATIC_DIR = BASE_DIR / 'static'
+
+STATICFILES_DIRS = [
+    STATIC_DIR
+]
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field

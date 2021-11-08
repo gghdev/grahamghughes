@@ -1,8 +1,6 @@
-import os
-
+from django.conf import settings
 from django.shortcuts import render
-from django.http import HttpResponse
 
 
 def index(request):
-    return render(request, 'index.html', {"env": os.environ['ENV']})
+    return render(request, 'index.html', {"env": settings.ENV, "hosts": settings.ALLOWED_HOSTS})
