@@ -1,4 +1,6 @@
 version: 0.2
 
 artifacts:
-  base-directory: deploy
+  files:
+    - '**/*'
+  base-directory: 'deploy'
