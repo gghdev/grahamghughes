@@ -5,4 +5,8 @@
 DIR=$(dirname "$0")
 
 cd "$DIR"/src
-honcho start --procfile Procfile.local
+
+python manage.py livereload &
+honcho start --procfile Procfile.local &
+
+wait

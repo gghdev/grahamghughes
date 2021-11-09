@@ -82,9 +82,14 @@ INSTALLED_APPS = [
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.messages',
-    'django.contrib.staticfiles',
     'home'
 ]
+
+if ENV_IS_DEV:
+    INSTALLED_APPS += [
+        'livereload',
+        'django.contrib.staticfiles'
+    ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -95,6 +100,9 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+
+if ENV_IS_DEV:
+    MIDDLEWARE += ['livereload.middleware.LiveReloadScript']
 
 ROOT_URLCONF = 'config.urls'
 

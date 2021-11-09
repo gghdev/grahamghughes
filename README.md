@@ -22,8 +22,8 @@ Deployment: AWS Elastic Beanstalk
 
 ### Development
 
-- Copy .env.example to .env and set a key
-- Run: ```honcho start --procfile Procfile.local```
+- Copy ```src/.env.example``` to ```src/.env``` and set a key
+- Run: ```./dev.sh``` which includes hot reloading
 
 ### Deployment
 
