@@ -1,5 +1,12 @@
 #!/usr/bin/env bash
 
+# Zips the deployable code into an archive placed at the directory above, outside the repo
+
 DIR=$(dirname "$0")
+
+# Remove any existing zip in the parent directory
 rm  "$DIR"/../grahamghughes.zip
-zip "$DIR"/../grahamghughes.zip -r * .[^.]* -x .git\* -x .env
+
+# Zip everything in deploy and save it to the parent directory
+cd  "$DIR"/deploy
+zip "$DIR"/../../grahamghughes.zip -r * .[^.]* -x .git\* -x .env
