@@ -7,6 +7,6 @@ DIR=$(dirname "$0")
 # Remove any existing zip in the parent directory
 rm  "$DIR"/../grahamghughes.zip
 
-# Zip everything in deploy and save it to the parent directory
-cd  "$DIR"/deploy
+# Zip everything in src and save it to the parent directory
+cd  "$DIR"/src
 zip "$DIR"/../../grahamghughes.zip -r * .[^.]* -x .git\* -x .env
