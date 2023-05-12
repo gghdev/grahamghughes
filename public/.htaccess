@@ -1,0 +1,7 @@
+RewriteEngine on
+
+RewriteRule ^blog/(.*)$ https://ofanywhere.com/blog/$1 [R=301,L]
+
+RewriteCond %{HTTP_HOST} !^ggh.local$ [NC]
+RewriteCond %{HTTP_HOST} !^grahamghughes.com$ [NC]
+RewriteRule ^(.*)$ https://grahamghughes.com/$1 [R=301,QSA,L]

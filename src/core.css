@@ -1,0 +1,72 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+a {
+    @apply font-bold;
+}
+
+.py {
+    @apply py-4;
+}
+
+.children-block > * {
+    @apply block;
+}
+
+.children-pre > * {
+    @apply whitespace-pre;
+}
+
+.flex-item-center {
+    @apply flex items-center justify-center;
+}
+
+i.fas {
+    @apply inline-block w-4 text-center mr-2;
+}
+
+.spaced {
+    @apply flex flex-col space-y-3;
+}
+
+svg {
+    display: inline-block;
+    opacity: 0.75;
+    -o-transition: .5s;
+    -ms-transition: .5s;
+    -moz-transition: .5s;
+    -webkit-transition: .5s;
+    transition: 0.5s;
+    height: 4rem;
+    fill: #FFF;
+}
+
+svg:hover {
+    opacity: 1;
+}
+
+.line-container {
+    width: 100%;
+    height: 50px;
+    margin-top: 0;
+    position: relative;
+}
+
+.line-wrap {
+    width: 50%;
+    height: 50%;
+    margin: 0 auto;
+    position: relative;
+}
+
+.line {
+    height: 2px;
+    background-color: #e9e9ed;
+    padding: 1px;
+}
+
+.right-rotate {
+    -ms-transform: rotate(-45deg);
+    transform: rotate(-33deg);
+}

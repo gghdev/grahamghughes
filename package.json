@@ -1,0 +1,10 @@
+{
+  "name": "grahamghughes.com",
+  "version": "1.0.0",
+  "description": "Personal homepage",
+  "author": "Graham G. Hughes",
+  "license": "ISC",
+  "devDependencies": {
+    "tailwindcss": "^3.3.2"
+  }
+}
