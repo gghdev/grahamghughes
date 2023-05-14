@@ -19,13 +19,22 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@600&display=swap" rel="stylesheet">
 
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=1">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png?v=1">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png?v=1">
+    <link rel="manifest" href="/site.webmanifest?v=1">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg?v=1" color="#468ff7">
+    <link rel="shortcut icon" href="/favicon.ico?v=1">
+    <meta name="msapplication-TileColor" content="#2b5797">
+    <meta name="theme-color" content="#ffffff">
+
     <!-- OpenGraph -->
     <meta property="og:title" content="Graham G. Hughes" />
     <meta property="og:type" content="profile" />
     <meta property="og:profile:first_name" content="Graham" />
     <meta property="og:profile:last_name" content="Hughes" />
     <meta property="og:url" content="https://grahamghughes.com" />
-    <meta property="og:image" content="https://grahamghughes.com/img/logo-card.jpg?i=2" />
+    <meta property="og:image" content="https://grahamghughes.com/img/graham-g-hughes-logo-card.png" />
     <meta property="og:description" content="London-based contract systems architect and full-stack PHP developer." />
 
     <!-- JSON-LD -->
@@ -125,18 +134,20 @@
 
 <header class="grid grid-cols-1 md:grid-cols-2">
 
-    <img src="img/graham-g-hughes.webp" alt="Graham G. Hughes" width="1000" height="1000"
-         class="bg-gradient-to-b from-cyan-500 to-blue-500
-                w-full max-h-[16rem]
-                object-contain"
-    />
+    <div class="bg-gradient-to-b from-cyan-500 to-blue-500">
+        <img src="img/graham-g-hughes.webp" alt="Graham G. Hughes" width="1000" height="1000"
+             class="w-full max-h-[16rem] object-contain"
+             style="animation: fade-in 500ms ease;"
+        />
+    </div>
 
     <div class="py
                 bg-gradient-to-b from-red-500 to-red-600
                 flex-item-center">
         <h1 class="text-left font-mono tracking-wide
                     text-3xl md:text-4xl font-bold text-white uppercase
-                    children-block children-pre">
+                    children-block children-pre fade-in"
+            style="animation: fade-in 750ms ease">
             <span>  Graham</span>
             <span>  G.</span>
             <span>Hughes</span>
@@ -147,7 +158,8 @@
                 bg-gradient-to-b from-gray-400 to-gray-500">
         <h2 class="text-left font-mono tracking-wide
                     text-2xl md:text-3xl font-bold text-white uppercase
-                    children-block children-pre">
+                    children-block children-pre"
+            style="animation: fade-in 1000ms ease">
             <span>Consultant</span>
             <span>   Software</span>
             <span>  Engineer</span>
@@ -156,7 +168,7 @@
 
     <div class="py flex-item-center h-64
                 bg-gradient-to-b from-cyan-500 to-blue-500">
-        <div class="relative">
+        <div class="relative" style="animation: fade-in 1250ms ease">
 
             <a href="https://www.forthstreet.com" rel="noopener" target="_blank" title="Forth Street Ltd"
                class="mr-20">
@@ -178,8 +190,8 @@
                 </svg>
             </a>
 
-            <div class="line-container ml-16">
-              <div class="line-wrap">
+            <div class="line-container">
+              <div class="line-wrap -right-16 relative">
                 <div class="line right-rotate"></div>
               </div>
             </div>
