@@ -818,8 +818,8 @@ svg:hover {
 }
 
 @media (min-width: 768px) {
-  .md\:w-1\/2 {
-    width: 50%;
+  .md\:max-w-lg {
+    max-width: 32rem;
   }
 
   .md\:grid-cols-2 {
