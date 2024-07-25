@@ -10,14 +10,6 @@ a {
     @apply py-4;
 }
 
-.children-block > * {
-    @apply block;
-}
-
-.children-pre > * {
-    @apply whitespace-pre;
-}
-
 .flex-item-center {
     @apply flex items-center justify-center;
 }

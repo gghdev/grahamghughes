@@ -133,17 +133,17 @@
 
 <header class="p-10 fixed w-full -z-10">
     <div class="flex justify-stretch md:justify-center md:items-center gap-7 flex-col md:flex-row">
-        <div class="flex-1 md:text-right">
-            <h1 class="text-left font-mono tracking-wide inline-block
-                    text-2xl md:text-3xl font-bold text-white uppercase
-                    children-block children-pre fade-in"
+        <div class="flex-1 text-center md:text-right">
+            <h1 class="text-left inline-block font-mono tracking-wide
+                    text-4xl md:text-3xl font-bold text-white uppercase
+                    *:block *:whitespace-pre fade-in"
                 style="animation: fade-in 750ms ease">
                 <span>  Graham</span>
                 <span>  G.</span>
                 <span>Hughes</span>
             </h1>
         </div>
-        <div class="flex-none">
+        <div class="flex-none pt-10 border-t border-gray-300 md:border-0 md:pt-0">
             <div class="bg-gradient-to-b from-cyan-500 to-blue-500 rounded-full h-40 w-40 md:w-52 md:h-52 gap-4 overflow-hidden mx-auto">
                 <img src="img/graham-g-hughes.webp" alt="Graham G. Hughes" width="1000" height="1000"
                      class="w-full h-full object-contain"
@@ -151,14 +151,15 @@
                 />
             </div>
         </div>
-        <div class="flex-1 text-right md:text-left">
-            <h2 class="text-left font-mono tracking-wide inline-block
-                    text-2xl md:text-3xl font-bold text-white uppercase
-                    children-block children-pre"
+        <div class="flex-1 text-center md:text-left">
+            <h2 class="text-center md:text-left font-mono tracking-wide inline-block
+                    text-xl md:text-3xl font-bold uppercase text-gray-300"
                 style="animation: fade-in 1000ms ease">
-                <span>Consultant</span>
-                <span>   Software</span>
-                <span>  Engineer</span>
+                <span class="md:block md:whitespace-pre"> Consultant</span>
+                <span class="inline-block md:inline md:*:block md:*:whitespace-pre">
+                    <span> Software</span>
+                    <span>Engineer</span>
+                </span>
             </h2>
         </div>
     </div>
