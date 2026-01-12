@@ -668,10 +668,6 @@ video {
   gap: 2.5rem;
 }
 
-.gap-20 {
-  gap: 5rem;
-}
-
 .gap-4 {
   gap: 1rem;
 }
@@ -983,6 +979,10 @@ svg:hover {
 
   .md\:justify-center {
     justify-content: center;
+  }
+
+  .md\:gap-20 {
+    gap: 5rem;
   }
 
   .md\:whitespace-pre {
